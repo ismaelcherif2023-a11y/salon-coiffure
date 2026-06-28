@@ -1,0 +1,19 @@
+const express = require('express')
+const cors = require('cors')
+const path = require('path')
+require('dotenv').config()
+
+const app = express()
+app.use(cors())
+app.use(express.json())
+
+// Servir les images uploadées
+app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')))
+
+app.use('/api/auth', require('./routes/auth'))
+app.use('/api/coiffures', require('./routes/coiffures'))
+app.use('/api/rendezvous', require('./routes/rendezvous'))
+app.use('/api/admin', require('./routes/admin'))
+
+const PORT = process.env.PORT || 5000
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
