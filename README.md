@@ -81,6 +81,28 @@ npm run dev
 curl -X POST http://localhost:5000/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"email":"admin@salon.com","password":"admin123"}'
+
+## Lancer en local (Windows)
+
+Ouvre **2 CMD** séparés :
+
+**CMD 1 — Backend :**
+```bash
+cd C:\Users\User\salon-coiffure\server
+npm run dev
+```
+
+**CMD 2 — Frontend :**
+```bash
+cd C:\Users\User\salon-coiffure\client
+npm run dev
+```
+
+Ensuite ouvre le navigateur sur :
+- Site client : http://localhost:5173
+- Dashboard admin : http://localhost:5173/admin
+- API backend : http://localhost:5000
+  
 ```
 
 ## Developpeur
